@@ -20,7 +20,14 @@ namespace QuizPrg282
         private void btnReadFile_Click(object sender, EventArgs e)
         {
             string text = System.IO.File.ReadAllText("Test.txt");
-            listbox1.Items.Add(text);
+            listBox1.Items.Add(text);//Edit done in Github
+
+            listBox1.Items.Add("");
+            string[] lines = System.IO.File.ReadAllLines("Test.txt");
+            foreach (var item in lines)
+            {
+                listBox1.Items.Add(item);
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
